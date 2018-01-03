@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza bestellen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="pizza.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Pizzaria Emmen</h2>
+  <nav class="showing">
+    <ul>
+      <a href="index.html"><li>Home</li></a>
+      <a href="#"><li>pizzas</li></a>
+      <a href="bestel.html"><li>uw bestelling</li></a>
+      <a href="#"><li>Contact</li></a>
+    </ul>
+
+    <div class="handle">Menu</div>
+  </nav>
+  </div>
+<table style="width:40%; border: 3px;">
+  <tr>
+    <th>Pizza</th>
+    <th>Groot</th>
+    <th>Medium</th>
+    <th>Klein</th>
+  </tr>
+  <tr>
+    <td>Pizza Mussarela</td>
+    <td>22,95<input type="number" name="grootmus" id="grootmus" min="1" max="10"></td>
+    <td>17,95<input type="number" name="mediummus" id="mediummus" min="1" max="10"> <br></td>
+    <td>11,95<input type="number" name="kleinmus" id="kleinmus" min="1" max="10"> <br></td>
+  </tr>
+  <tr>
+    <td>Pizza Margherita</td>
+    <td>24.95<input type="number" name="grootmar" id="grootmar" min="1" max="10"></td>
+    <td>17.95<input type="number" name="mediummar" id="mediummar" min="1" max="10"> <br></td>
+    <td>12.95<input type="number" name="kleinmar" id="kleinmar" min="1" max="10"> <br></td>
+  </tr>
+  <tr>
+    <td>Pizza Four Seasons</td>
+    <td>29.95<input type="number" name="grootfose" id="grootfose" min="1" max="10"></td>
+    <td>22.95<input type="number" name="mediumfose" id="mediumfose" min="1" max="10"></td>
+    <td>15.95<input type="number" name="kleinfose" id="kleinfose" min="1" max="10"></td>
+  </tr>
+  <tr>
+    <td>Pizza Calabresa</td>
+    <td>24.95<input type="number" name="grootcal" id="grootcal" min="1" max="10"></td>
+    <td>17.95<input type="number" name="mediumcal" id="mediumcal" min="1" max="10"></td>
+    <td>12.95<input type="number" name="kleincal" id="kleincal" min="1" max="10"></td>
+  </tr>
+  <tr>
+    <td>Pizza 4 Kazen</td>
+    <td>29.95<input type="number" name="groot4ka" id="groot4ka" min="1" max="10"></td>
+    <td>22.95<input type="number" name="medium4ka" id="medium4ka" min="1" max="10"></td>
+    <td>15.95<input type="number" name="klein4ka" id="klein4ka" min="1" max="10"></td>
+  </tr>
+</table>
+<br>
+<input type="submit" name="butt" id="button1" onclick="myFunction()" value="Total price"> </input><br><br>
+
+
+Bezorging bij u thuis:  <p>Uw postcode (alleen nummers): <input type="number" name="" id="pcode" min="7811" max="7899">
+<input type="submit" name="button" id="button1" onclick="myFunction()" value="Bezorg prijs"> </input>
+
+<script>
+function myFunction() {
+var mussg = document.getElementById("grootmus").value;
+var mussm = document.getElementById("mediummus").value;
+var mussk = document.getElementById("kleinmus").value;
+var margg = document.getElementById("grootmar").value;
+var margm = document.getElementById("mediummar").value;
+var margk = document.getElementById("kleinmar").value;
+var foseg = document.getElementById("grootfose").value;
+var fosem = document.getElementById("mediumfose").value;
+var fosek = document.getElementById("kleinfose").value;
+var calag = document.getElementById("grootcal").value;
+var calam= document.getElementById("mediumcal").value;
+var calak = document.getElementById("kleincal").value;
+var vkazg = document.getElementById("groot4ka").value;
+var vkazm = document.getElementById("medium4ka").value;
+var vkazk = document.getElementById("klein4ka").value;
+var result = 0;
+ result += ((mussg * 22.95) + (mussm * 17.95) + (mussk * 11.45) + (margg * 24.95) + (margm * 17.95) + (margk * 11.45) + (foseg * 29.95) + (fosem * 22.95) + (fosek * 15.95) + (calag * 24.95) + (calam * 17.95) + (calak * 11.45) + (vkazg * 29.95) + (vkazm * 23.95) + (vkazk * 15.95));
+var n = result.toFixed(2);
+document.getElementById("button1").value = n;
+}
+
+function mypostcode() {
+var pc = document.getElementById("pcode").value
+  
+}
+
+
+
+
+</script>
+</body>
+</html>
