@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza bestellen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="pizza.css">
+</head>
+<body>
+  <div class="header">
+      <h2>Pizzaria Emmen</h2>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="pizza2.html" class="active">Pizzas</a>
+      <a href="bestel.html">Bestelling</a>
+      <a href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+  </div>
+
+<div id="main1">
+  <table style="width:30%">
+    <tr>
+      <th>Pizza</th>
+      <th>Aantal</th>
+      <th>Size (groot = 3,<br> medium = 2,<br> klein = 1)</th>
+    </tr>
+    <tr>
+      <td>Pizza Mussarela</td>
+      <td><input type="number" name="quantity1" id="quantity1" min="1" max="5"></td>
+      <td><input type="number" name="size1" id="size1" min="1" max="3"> <br></td>
+    </tr>
+    <tr>
+      <td>Pizza Margherita</td>
+      <td><input type="number" name="quantity2" id="quantity2" min="1" max="5"></td>
+      <td><input type="number" name="size2" id="size2" min="1" max="3"> <br></td>
+    </tr>
+    <tr>
+      <td>Pizza Four Seasons</td>
+      <td><input type="number" name="quantity3" id="quantity3" min="1" max="5"></td>
+      <td><input type="number" name="size3" id="size3" min="1" max="3"></td>
+    </tr>
+  </table>
+  <br>
+  <input type="submit" name="button" id="button1" onclick="myFunction()" value="Total price"> </input>
+</div>
+
+<script>
+
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+              x.className += " responsive";
+          } else {
+              x.className = "topnav";
+          }
+      }
+
+      function myFunction() {
+        var mussq = document.getElementById("quantity1").value;
+        var musss = document.getElementById("size1").value;
+        var margq = document.getElementById("quantity2").value;
+        var margs = document.getElementById("size2").value;
+        var foseq = document.getElementById("quantity3").value;
+        var foses = document.getElementById("size3").value;
+        var result = 0;
+        result += ((mussq * musss/5 * 38.25) + (margq * margs/5 * 41.58) + (foseq * foses/5 * 49.91));
+        var n = result.toFixed(2);
+        document.getElementById("button1").value = n;
+        }
+</script>
+</body>
+</html>

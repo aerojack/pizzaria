@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head>
 <title>Pizzaria</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="pizza.css">
@@ -7,37 +8,35 @@
 <body>
   <div class="header">
     <h2>Pizzaria Emmen</h2>
-  <nav class="showing">
-    <ul>
-      <a href="#"><li>Home</li></a>
-      <a href="#"><li>pizzas</li></a>
-      <a href="bestel.html"><li>uw bestelling</li></a>
-      <a href="#"><li>Contact</li></a>
-    </ul>
-
-    <div class="handle">Menu</div>
-  </nav>
+      <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="pizza2.html">Pizzas</a>
+        <a href="bestel.html">Bestelling</a>
+        <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+  </div>
+  <!--end of header and beginning of pizzas-->
+<div id="main1">
+<!--div for first pizza-->
+  <div class="col-3">
+    <div class="pizza">
+      <h3> Pizza Mussarela</h3>
+      <img src="mussarela.jpeg" class="pic" alt="HTML5 Icon">
+      <select class="item_Size">
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+      <span class="specs"><h3></h3>
+        <div class="text">
+          <p> Ingr.: tomaten saus, olijven, oregano, mussarela, tomaten</p><br>
+          <p> Prijs (35cm)  $ 22,95<br>Prijs (30cm)   $ 17,95</p>
+      </div></span>
+  </div>
 </div>
-
-hallo
-
-      <div id="main1">
-
-<div class="pizza">
-  <h3> Pizza Mussarela</h3>
-  <img src="mussarela.jpeg" class="pic" alt="HTML5 Icon">
-  <select class="item_Size">
-    <option value="Small">Small</option>
-    <option value="Medium">Medium</option>
-    <option value="Large">Large</option>
-  </select>
-  <span class="specs"><h3></h3>
-    <div class="text">
-<p> Ingr.: tomaten saus, olijven, oregano, mussarela, tomaten</p><br>
-<p> Prijs (35cm)  $ 22,95<br>Prijs (30cm)   $ 17,95</p>
-  </div></span>
-</div>
-
+<!--div forsecond pizza-->
+<div class="col-3">
 <div class="pizza">
   <h3> Pizza Margerita</h3>
 <img src="margerita.jpeg" class="pic" alt="HTML5">
@@ -47,7 +46,8 @@ hallo
 <p> Prijs (35cm)  $ 24,95</p>
 </div></span>
 </div>
-
+</div>
+<div class="col-3">
 <div class="pizza">
   <h3> Pizza 4 Seasons</h3>
   <img src="4seasons.jpeg" class="pic" alt="HTML5">
@@ -57,6 +57,8 @@ hallo
   <p> Prijs (35cm)  $ 24,95</p>
   </div></span>
 </div>
+</div>
+<div class="col-3">
 <div class="pizza">
   <h3> Pizza Calabresa</h3>
 <img src="calabresa.jpeg" class="pic" alt="HTML5">
@@ -66,6 +68,8 @@ hallo
 <p> Prijs (35cm)  $ 24,95</p>
 </div></span>
 </div>
+</div>
+<div class="col-3">
 <div class="pizza">
   <h3> Pizza 4kazen</h3>
 <img src="4kazen.jpeg" class="pic" alt="HTML5">
@@ -74,6 +78,7 @@ hallo
 <p> Ingr.: tomaten saus, olijven, oregano, mussarela, basilicum, tomaten</p><br>
 <p> Prijs (35cm)  $ 29,95<br>         (30cm)   $ 23,95</p>
 </div></span>
+</div>
 </div>
 <div class="pizza">
 </div>
@@ -86,7 +91,15 @@ hallo
 <div class="pizza">
 </div>
       </div>
-
-
-
+<script>
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+              x.className += " responsive";
+          } else {
+              x.className = "topnav";
+          }
+      }
+</script>
 </body></html>

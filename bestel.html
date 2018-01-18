@@ -8,18 +8,89 @@
 <body>
   <div class="header">
     <h2>Pizzaria Emmen</h2>
-  <nav class="showing">
-    <ul>
-      <a href="index.html"><li>Home</li></a>
-      <a href="#"><li>pizzas</li></a>
-      <a href="bestel.html"><li>uw bestelling</li></a>
-      <a href="#"><li>Contact</li></a>
-    </ul>
-
-    <div class="handle">Menu</div>
-  </nav>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="pizza2.html">Pizzas</a>
+      <a href="bestel.html" class="active">Bestelling</a>
+      <a href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
   </div>
-<table style="width:40%; border: 3px;">
+  <div class="pizza2">
+    <h3> Pizza Margerita</h3>
+    <img src="margerita.jpeg" class="pic2" alt="HTML5 Icon">
+    <label>Product Name</label>
+    <input id="pname" type="text" value="pizza margerita groot"><br>
+    <label>Quantity</label>
+    <input id="pqty" type="number"><br>
+    <label>Unit Price</label>
+    <input id="price" type="number" value="24.95"><br>
+    <button onclick="addItem()">Add item</button>
+  </div>
+  <div class="pizza2">
+    <h3> Pizza Mussarela</h3>
+    <img src="mussarela.jpeg" class="pic2" alt="HTML5 Icon">
+    <label>Product Name</label>
+    <input id="pname2" type="text" value="pizza mussarela groot"><br>
+    <label>Quantity</label>
+    <input id="pqty2" type="number"><br>
+    <label>Unit Price</label>
+    <input id="price2" type="number" value="22.95"><br>
+    <button onclick="addItem2()">Add item</button>
+  </div>
+
+
+  <div id="cart">
+    <h4>Uw bestelling</h4>
+  </div>
+
+<script>
+var inames = [];
+var iqtyp = [];
+var iprice = [];
+
+
+  function addItem(pname,pqty,price){
+    /*var inames = document.getElementById("pname").value;
+    var iqtyp = document.getElementById("pqty").value;
+    var iprice = document.getElementById("price").value;*/
+    inames.push(document.getElementById("pname").value);
+    iqtyp.push(parseInt(document.getElementById("pqty").value));
+    iprice.push(parseInt(document.getElementById('price').value));
+    displayCart();
+
+  }
+  function addItem2(pname,pqty,price){
+    /*var inames = document.getElementById("pname").value;
+    var iqtyp = document.getElementById("pqty").value;
+    var iprice = document.getElementById("price").value;*/
+    inames.push(document.getElementById("pname2").value);
+    iqtyp.push(parseInt(document.getElementById("pqty2").value));
+    iprice.push(parseInt(document.getElementById('price2').value));
+    displayCart();
+
+  }
+
+  function displayCart(){
+   cartdata = "<table><tr><th>Product Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>";
+   total = 0;
+      for (i=0; i<inames.length; i++){
+        total +=iqtyp[i] * iprice[i];
+        cartdata += "<tr><td>" + inames[i] + "</td><td>" +iqtyp[i] + "</td><td>" + iprice[i] + "</td><td>" + iqtyp[i] * iprice[i] + "</td><td><button onclick='delElement(" + i + ")'>Delete</button></td></tr>"
+      }
+      cartdata += "<tr><td></td><td></td><td>total</td><td>" + total + "</td></tr></table>";
+
+      document.getElementById("cart").innerHTML = cartdata;
+  }
+  function delElement(q){
+      inames.splice(a, 1);
+      iqtyp.splice(a, 1);
+      iqprice.splice(a, 1);
+      displayCart();
+  }
+
+</script>
+<!--<table style="width:40%; border: 3px;">
   <tr>
     <th>Pizza</th>
     <th>Groot</th>
@@ -63,8 +134,18 @@
 
 Bezorging bij u thuis:  <p>Uw postcode (alleen nummers): <input type="number" name="" id="pcode" min="7811" max="7899">
 <input type="submit" name="button" id="button1" onclick="myFunction()" value="Bezorg prijs"> </input>
-
+-->
 <script>
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+              x.className += " responsive";
+          } else {
+              x.className = "topnav";
+          }
+      }
+/*
 function myFunction() {
 var mussg = document.getElementById("grootmus").value;
 var mussm = document.getElementById("mediummus").value;
@@ -89,12 +170,12 @@ document.getElementById("button1").value = n;
 
 function mypostcode() {
 var pc = document.getElementById("pcode").value
-  
+
 }
 
 
 
-
+*/
 </script>
 </body>
 </html>
